@@ -28,13 +28,13 @@ const getUserEmailByName = (name: string): string => {
   return "특정 회원을 찾을 수 없습니다!";
 };
 
-test("전체 회원 중에 아래의 회원 정보를 가진 회원이 존재 하는가?", () => {
-  expect(getAllUsers()).toContainEqual({
-    email: "tetz@kdt.com",
-    name: "이효",
-    age: 39,
-  });
-});
+// test("전체 회원 중에 아래의 회원 정보를 가진 회원이 존재 하는가?", () => {
+//   expect(getAllUsers()).toContainEqual({
+//     email: "tetz@kdt.com",
+//     name: "이효",
+//     age: 39,
+//   });
+// });
 
 // test("25살 이상인 회원은 2명 또는 그 이하다!", () => {
 //   expect(getCountsOverAge(25)).toBeLessThanOrEqual(0);
@@ -45,3 +45,7 @@ test("전체 회원 중에 아래의 회원 정보를 가진 회원이 존재 �
 //     /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/
 //   );
 // });
+
+test("전체 회원은 4명인가?", () => {
+  expect(getAllUsers()).toHaveLength(4);
+});
